@@ -1,0 +1,134 @@
+:: StoryTitle
+Film Experiment
+
+
+:: StoryData
+{
+  "ifid": "BC3EE40A-4822-4193-985A-150EA4CCAEF6",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "Untitled Passage",
+  "zoom": 1
+}
+
+
+:: Call {"position":"825,650","size":"100,100"}
+{{{<video playsinline autoplay muted loop id="myVideo">
+    <source src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%203.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <!--<audio id='bMusic' autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/sad%20music%20for%20int%20film%202024.mp3'></audio>-->
+  <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/CallVO.mp3'type='audio/mpeg'></audio>
+  <div class='grid-container-one-column'>
+    <div class='grid-item'>
+      <button class='myBtn'>}}}[[Go Back|Start]]{{{</button>
+    </div>
+  </div>}}}
+
+
+
+:: Don't call {"position":"950,650","size":"100,100"}
+{{{<video playsinline autoplay muted loop id="myVideo">
+    <source src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%202.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <!--<audio id='bMusic' autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/sad%20music%20for%20int%20film%202024.mp3'></audio>-->
+  <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/noCall.mp3'type='audio/mpeg'></audio>
+  <div class='grid-container-one-column'>
+    <div class='grid-item'>
+      <button class='myBtn'>}}}[[Go Back|Start]]{{{</button>
+    </div>
+  </div>}}}
+
+
+:: Start {"position":"825,525","size":"100,100"}
+{{{<video playsinline autoplay muted loop id="myVideo">
+    <source src="https://github.com/cpmmckeown/Interactivefilm2024/raw/master/interactive%20clip%201.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <audio autoplay><source src='https://github.com/cpmmckeown/Interactivefilm2024/raw/master/getHelpVO.mp3' type='audio/mpeg'></audio>
+    <div class='grid-container-two-column'><div class='grid-item'> <button class='myBtn'><p class="fade-in-text"> }}}[[Call]]{{{</p></button></div><div class='grid-item'><button class='myBtn'><p class="fade-in-text">}}}[[Don't call]]{{{</p></button></div>}}}
+
+
+
+:: Untitled Passage {"position":"825,400","size":"100,100"}
+[[Start]]
+
+
+:: StoryScript [script]
+    var audio = document.createElement('audio');
+
+    audio.src = 'https://github.com/cpmmckeown/Interactivefilm2024/raw/master/sad%20music%20for%20int%20film%202024.mp3' ;
+
+    audio.loop = true;
+
+    audio.play();
+
+:: StoryStylesheet [stylesheet]
+* {
+  box-sizing: border-box;
+}
+
+#myVideo {
+  position:relative;
+  max-width: 128rem;
+  width: 100%;
+  max-height: 61.6rem;
+  height: 100%;
+}
+
+.grid-container-two-column {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+
+.grid-container-one-column {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  
+}
+
+.myBtn {
+  height: auto;
+  width: auto;
+  font-size: 1em;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+ 
+}
+
+.myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+.fade-in-text {
+  font-family: Arial;
+  animation: fadeIn 10s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  75%{opacity: 0;}
+  100% { opacity: 1; }
+}
+
+
+
